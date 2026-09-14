@@ -1,0 +1,12 @@
+download: 
+cyclone-20.1.1.720.qdz              QuartusLiteSetup-20.1.1.720-linux.run
+max10-20.1.1.720.qdz 
+
+chmod +x QuartusLiteSetup-20
+then run it and install
+make sure all files in the same directory
+sudo nano /etc/udev/rules.d/51-usbblaster.rules
+
+paste: SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", MODE="0666", GROUP="plugdev" 
+sudo udevadm control --reload-rules then sudo udevadm trigger
+groups $USER — check if plugdev appears in the output.
